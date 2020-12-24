@@ -2,18 +2,19 @@ package org.launchcode.techjobs_oo;
 
 import java.util.Objects;
 
+
 public class Job {
 
 
 
     private String name;
-    private String employer;
-    private String location;
-    private String positionType;
-    private String coreCompetency;
+    private Employer employer;
+    private Location location;
+    private PositionType positionType;
+    private CoreCompetency coreCompetency;
     private int id;
     private static int nextId = 1;
-    private String value;
+    //private String value;
 
     // TODO: Add two constructors - one to initialize a unique ID and a second to initialize the
     //  other five fields. The second constructor should also call the first in order to initialize
@@ -22,26 +23,27 @@ public class Job {
         id = nextId;
         nextId++;
 
+
         this.id = id;
         this.nextId = nextId;
     }
-    public Job(String aValue){
+    //public Job(String aValue){
+        //this();
+        //this.value = aValue;
+
+
+    //}
+
+    public Job(String name, Employer employer, Location location, PositionType positionType, CoreCompetency coreCompetency) {
+
+
         this();
-        this.value = aValue;
-
-
-    }
-
-    public Job(String name, String employer, String location, String positionType, String coreCompetency, Integer id) {
-
-
-
         this.name = name;
         this.employer = employer;
         this.location = location;
         this.positionType = positionType;
         this.coreCompetency = coreCompetency;
-        this.id = nextId;
+
 
 
 
@@ -83,35 +85,35 @@ public class Job {
         this.name = name;
     }
 
-    public String getEmployer() {
+    public Employer getEmployer() {
         return employer;
     }
 
-    public void setEmployer(String employer) {
+    public void setEmployer(Employer employer) {
         this.employer = employer;
     }
 
-    public String getLocation() {
+    public Location getLocation() {
         return location;
     }
 
-    public void setLocation(String location) {
+    public void setLocation(Location location) {
         this.location = location;
     }
 
-    public String getPositionType() {
+    public PositionType getPositionType() {
         return positionType;
     }
 
-    public void setPositionType(String positionType) {
+    public void setPositionType(PositionType positionType) {
         this.positionType = positionType;
     }
 
-    public String getCoreCompetency() {
+    public CoreCompetency getCoreCompetency() {
         return coreCompetency;
     }
 
-    public void setCoreCompetency(String coreCompetency) {
+    public void  setCoreCompetency(CoreCompetency coreCompetency) {
         this.coreCompetency = coreCompetency;
     }
 
@@ -119,11 +121,10 @@ public class Job {
         return id;
     }
 
-    public String getValue() {
-        return value;
-    }
+    //public String getValue() {
+        //return value; }
 
-    public void setValue(String value) {
-        this.value = value;
-    }
+  // public void setValue(String value) {
+       // this.value = value;
+   // }
 }

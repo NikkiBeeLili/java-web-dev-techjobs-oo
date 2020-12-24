@@ -3,8 +3,8 @@ package org.launchcode.techjobs_oo;
 import java.util.Objects;
 
 public class Employer {
-    private int id;
-    private static int nextId = 1;
+    private Integer id;
+    private static Integer nextId = 1;
     private String value;
 
     public Employer() {
@@ -12,9 +12,9 @@ public class Employer {
         nextId++;
     }
 
-    public Employer(String value) {
+    public Employer(String aValue) {
         this();
-        this.value = value;
+        this.value = aValue;
     }
 
     // Custom toString, equals, and hashCode methods:
