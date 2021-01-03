@@ -2,6 +2,9 @@ package org.launchcode.techjobs_oo;
 
 import java.util.Objects;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+
 
 public class Job {
 
@@ -74,6 +77,54 @@ public class Job {
     }
 
 
+
+    @Override
+    public String toString() {
+        String OutputTest = "";
+        if (name == null && employer == null && location== null && positionType == null && coreCompetency == null) {
+            return "Oops! This job doesn't seem to exist.";
+
+        }
+
+        else if (name.equals("")) {
+            name="Data not available" ;
+        }
+
+        else if (employer.getValue().equals("")) {
+            employer.setValue("Data not available") ;
+        }
+        else if (location.getValue().equals("")) {
+            location.setValue("Data not available");
+        }
+       else if (positionType.getValue().equals("")) {
+           positionType.setValue("Data not available");
+       }
+        else if (coreCompetency.getValue().equals("")) {
+            coreCompetency.setValue("Data not available");
+        }
+
+        OutputTest = String.format("\nID: " + id + "\nName: " + name + "\nEmployer: "
+                + employer + "\nLocation: " + location
+                + "\nPosition Type: " + positionType
+                + "\nCore Competency: " + coreCompetency + "\n");
+
+        return OutputTest;
+
+
+        //return "\nID: " + id + "\nName: " + name + "\nEmployer: "
+               // + employer + "\nLocation: " + location
+                //+ "\nPosition Type: " + positionType
+              //  + "\nCore Competency: " + coreCompetency + "\n";
+
+    }
+
+
+
+
+
+
+
+
     // TODO: Add getters for each field EXCEPT nextId. Add setters for each field EXCEPT nextID
     //  and id.
 
@@ -120,6 +171,17 @@ public class Job {
     public int getId() {
         return id;
     }
+
+
+        //for (Job) {
+           // System.out.println("\n__________\n" + name.toString() + "\n________\n" + employer.getValue().toString() + "\n__________\n" +
+                   // location.getValue().toString() + "\n__________\n" + positionType.getValue().toString() + "\n__________\n" + coreCompetency.getValue().toString() +
+                   // "\n__________\n" + getId() + "\n__________\n");
+       // }
+
+        //else {
+
+  //  }
 
     //public String getValue() {
         //return value; }

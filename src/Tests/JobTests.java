@@ -4,23 +4,27 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 import org.launchcode.techjobs_oo.*;
 import org.launchcode.techjobs_oo.Job;
-import org.junit.After;
-import static org.junit.Assert.fail;
 import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.assertFalse;
+
 
 public class JobTests {
 
     Job android_developer;
     Job ios_engineer;
     Job road_runner;
+    Job missing_DataJob;
+    Job ios_engineer_missing_Location;
     
     @Before
     public void setup(){
         android_developer = new Job("Android Developer", new Employer("Float Left Interactive"),new Location("South Florida"), new PositionType("Mobile Developer"), new CoreCompetency("Android"));
         ios_engineer = new Job("IOS Engineer", new Employer ("Utrip"), new Location("Seattle"), new PositionType("Mobile Developer"), new CoreCompetency ("iOS"));
         road_runner = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        missing_DataJob = new Job();
+        ios_engineer_missing_Location = new Job("IOS Engineer", new Employer ("Utrip"), new Location(""), new PositionType("Mobile Developer"), new CoreCompetency ("iOS"));
     }
+
+
 
     @Test
     public void testSettingJobId(){
@@ -55,28 +59,30 @@ public class JobTests {
     }
 
 
-    //Test objects do not generate ids based on the one before.
 
     //toString Tests
-    //@Test
-     //public void shouldReturnStringWithLineBeforeAndAfterInfo(){
-        //assertTrue(Job_1.toString().equals("\n__________\n" + Job.getValue + "\n________\n").getId()
-                //should print );
-    //}
+    @Test
+     public void shouldReturnStringWithLineBeforeAndAfterInfo(){
 
-    //@Test
+        String Output = String.format("\nID: " + ios_engineer.getId()  + "\nName: " + ios_engineer.getName() + "\nEmployer: " + ios_engineer.getEmployer()
+                + "\nLocation: " + ios_engineer.getLocation()  +"\nPosition Type: " + ios_engineer.getPositionType() + "\nCore Competency: " + ios_engineer.getCoreCompetency() + "\n");
+        assertEquals(Output, ios_engineer.toString());
 
-    //public void shouldContainLabelAndDataForEachField(){
-       // assertTrue(//Job.toString()== Job.Class + Job.Value);
-    //}
-
-    //@Test
-
-    //public void shouldContainErrorMessageForEmptyField(){
-     //(if Job.value === null){
-         //assertTrue(sout(“Data not available”));
-   // }
 
     }
 
-//}
+
+
+    @Test
+
+    public void shouldContainErrorMessageForEmptyField(){
+        assertTrue(missing_DataJob.toString().equals("Oops! This job doesn't seem to exist."));
+        String Output = String.format("\nID: " + ios_engineer_missing_Location.getId()  + "\nName: " + ios_engineer_missing_Location.getName() + "\nEmployer: " + ios_engineer_missing_Location.getEmployer()
+                + "\nLocation: Data not available"  +"\nPosition Type: " + ios_engineer_missing_Location.getPositionType() + "\nCore Competency: " + ios_engineer_missing_Location.getCoreCompetency() + "\n");
+        assertEquals(Output, ios_engineer_missing_Location.toString());
+
+    }
+
+    }
+
+
