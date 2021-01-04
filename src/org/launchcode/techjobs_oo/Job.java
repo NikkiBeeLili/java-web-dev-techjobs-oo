@@ -173,20 +173,5 @@ public class Job {
     }
 
 
-        //for (Job) {
-           // System.out.println("\n__________\n" + name.toString() + "\n________\n" + employer.getValue().toString() + "\n__________\n" +
-                   // location.getValue().toString() + "\n__________\n" + positionType.getValue().toString() + "\n__________\n" + coreCompetency.getValue().toString() +
-                   // "\n__________\n" + getId() + "\n__________\n");
-       // }
 
-        //else {
-
-  //  }
-
-    //public String getValue() {
-        //return value; }
-
-  // public void setValue(String value) {
-       // this.value = value;
-   // }
 }
